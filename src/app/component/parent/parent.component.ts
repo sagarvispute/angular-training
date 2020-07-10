@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-parent',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit {
 
   name: string = "Santosh";
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   ngOnInit(): void {
   }
@@ -17,4 +18,7 @@ export class ParentComponent implements OnInit {
     alert(color);
   }
 
+  changeName() {
+    this.name = 'Sagar';
+  }
 }

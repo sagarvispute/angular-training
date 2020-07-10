@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-header',
@@ -7,24 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  user: string;
   links: any[] = [
     {
-      name: 'Home'
+      name: 'Home',
+      route: 'home'
     },
     {
-      name: 'About'
+      name: 'About',
+      route: 'about'
     },
     {
-      name: 'Services'
-    },
-    {
-      name: 'Gallery'
-    },
-    {
-      name: 'Contact'
+      name: 'Contact',
+      route: 'contact'
     }
   ];
-  constructor() { }
+  constructor(private appService: AppService) {
+    this.user = this.appService.userName;
+  }
 
   ngOnInit(): void {
   }

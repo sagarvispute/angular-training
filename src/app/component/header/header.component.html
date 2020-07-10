@@ -1,7 +1,14 @@
 <div class="header">
+    <!-- <ul>
+        <li *ngFor="let item of links"><a [routerLink]="item.route">{{item.name}}</a></li>
+    </ul> -->
+
     <ul>
-        <li *ngFor="let item of links"><a href="#">{{item.name}}</a></li>
+        <li><a [routerLink]="['\home']">Home</a></li>
+        <li><a [routerLink]="['\about']">About</a></li>
+        <li><a [routerLink]="['\contact']">Contact</a></li>
     </ul>
 
     <div class="clear"></div>
 </div>
+<!-- <h1>{{user}}</h1> -->

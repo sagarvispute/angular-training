@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-child',
@@ -9,8 +10,11 @@ export class ChildComponent implements OnInit {
 
   @Input() userName: string = '';
   @Output() setColor = new EventEmitter();
+  userPass: string;
   
-  constructor() { }
+  constructor(private appService: AppService) {
+    this.userPass = this.appService.password;
+  }
 
   ngOnInit(): void {
   }
